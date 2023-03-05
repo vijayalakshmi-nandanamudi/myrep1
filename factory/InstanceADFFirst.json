@@ -1,0 +1,9 @@
+{
+	"name": "InstanceADFFirst",
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "9d5baf53-00fc-42fc-9a2e-acb04a17aba4",
+		"tenantId": "b1e82da9-3520-493f-b469-c9a68d9a82f8"
+	}
+}
