@@ -15,6 +15,12 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"command": "python first.py",
+					"resourceLinkedService": {
+						"referenceName": "LS_AzureBlobStorage1",
+						"type": "LinkedServiceReference"
+					},
+					"folderPath": "customcontainer",
 					"referenceObjects": {
 						"linkedServices": [],
 						"datasets": []
