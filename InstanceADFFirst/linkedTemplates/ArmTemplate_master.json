@@ -1,0 +1,77 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "InstanceADFFirst"
+		},
+		"LS_AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_AzureBlobStorage1'"
+		},
+		"Ls_AzureBatch1_accessKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessKey' of 'Ls_AzureBatch1'"
+		},
+		"Ls_AzureBatch1_properties_typeProperties_batchUri": {
+			"type": "string",
+			"defaultValue": "https://firstbatchinstance.southindia.batch.azure.com"
+		},
+		"Ls_AzureBatch1_properties_typeProperties_poolName": {
+			"type": "string",
+			"defaultValue": "demopoolid"
+		},
+		"Ls_AzureBatch1_properties_typeProperties_accountName": {
+			"type": "string",
+			"defaultValue": "firstbatchinstance"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "InstanceADFFirst_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LS_AzureBlobStorage1_connectionString": {
+						"value": "[parameters('LS_AzureBlobStorage1_connectionString')]"
+					},
+					"Ls_AzureBatch1_accessKey": {
+						"value": "[parameters('Ls_AzureBatch1_accessKey')]"
+					},
+					"Ls_AzureBatch1_properties_typeProperties_batchUri": {
+						"value": "[parameters('Ls_AzureBatch1_properties_typeProperties_batchUri')]"
+					},
+					"Ls_AzureBatch1_properties_typeProperties_poolName": {
+						"value": "[parameters('Ls_AzureBatch1_properties_typeProperties_poolName')]"
+					},
+					"Ls_AzureBatch1_properties_typeProperties_accountName": {
+						"value": "[parameters('Ls_AzureBatch1_properties_typeProperties_accountName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

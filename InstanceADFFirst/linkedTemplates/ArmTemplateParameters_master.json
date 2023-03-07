@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "InstanceADFFirst"
+		},
+		"LS_AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"Ls_AzureBatch1_accessKey": {
+			"value": ""
+		},
+		"Ls_AzureBatch1_properties_typeProperties_batchUri": {
+			"value": "https://firstbatchinstance.southindia.batch.azure.com"
+		},
+		"Ls_AzureBatch1_properties_typeProperties_poolName": {
+			"value": "demopoolid"
+		},
+		"Ls_AzureBatch1_properties_typeProperties_accountName": {
+			"value": "firstbatchinstance"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
