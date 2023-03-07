@@ -51,7 +51,7 @@
 						},
 						"userProperties": [],
 						"typeProperties": {
-							"command": "python first.py",
+							"command": "python main_export_local_airing_views_all.py 2082 \"Waco-Killeen, TX\"",
 							"resourceLinkedService": {
 								"referenceName": "LS_AzureBlobStorage1",
 								"type": "LinkedServiceReference"
