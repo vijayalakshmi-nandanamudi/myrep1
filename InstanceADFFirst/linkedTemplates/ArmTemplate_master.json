@@ -15,6 +15,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accessKey' of 'Ls_AzureBatch1'"
 		},
+		"AzureFunction1_functionKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'functionKey' of 'AzureFunction1'"
+		},
 		"Ls_AzureBatch1_properties_typeProperties_batchUri": {
 			"type": "string",
 			"defaultValue": "https://firstbatchinstance.southindia.batch.azure.com"
@@ -26,6 +30,10 @@
 		"Ls_AzureBatch1_properties_typeProperties_accountName": {
 			"type": "string",
 			"defaultValue": "firstbatchinstance"
+		},
+		"AzureFunction1_properties_typeProperties_functionAppUrl": {
+			"type": "string",
+			"defaultValue": "https://cstestpython.azurewebsites.net"
 		},
 		"containerUri": {
 			"type": "string",
@@ -57,8 +65,14 @@
 					"LS_AzureBlobStorage1_connectionString": {
 						"value": "[parameters('LS_AzureBlobStorage1_connectionString')]"
 					},
+					"AzureFunction1_functionKey": {
+						"value": "[parameters('AzureFunction1_functionKey')]"
+					},
 					"Ls_AzureBatch1_accessKey": {
 						"value": "[parameters('Ls_AzureBatch1_accessKey')]"
+					},
+					"AzureFunction1_properties_typeProperties_functionAppUrl": {
+						"value": "[parameters('AzureFunction1_properties_typeProperties_functionAppUrl')]"
 					},
 					"Ls_AzureBatch1_properties_typeProperties_batchUri": {
 						"value": "[parameters('Ls_AzureBatch1_properties_typeProperties_batchUri')]"

@@ -11,6 +11,9 @@
 		"Ls_AzureBatch1_accessKey": {
 			"value": ""
 		},
+		"AzureFunction1_functionKey": {
+			"value": ""
+		},
 		"Ls_AzureBatch1_properties_typeProperties_batchUri": {
 			"value": "https://firstbatchinstance.southindia.batch.azure.com"
 		},
@@ -19,6 +22,9 @@
 		},
 		"Ls_AzureBatch1_properties_typeProperties_accountName": {
 			"value": "firstbatchinstance"
+		},
+		"AzureFunction1_properties_typeProperties_functionAppUrl": {
+			"value": "https://cstestpython.azurewebsites.net"
 		},
 		"containerUri": {
 			"value": ""
