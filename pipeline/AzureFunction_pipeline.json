@@ -17,7 +17,7 @@
 				"typeProperties": {
 					"functionName": " HttpTrigger1",
 					"method": "POST",
-					"body": "{\"market_num\":\"2036\"\n,market_name\":\"Cincinnati, OH\"}"
+					"body": "{\"market_num\":\"2036\"\n,market_name\":\"Cincinnati, OH\",\n\"name\":'Test\"}"
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureFunction1",
