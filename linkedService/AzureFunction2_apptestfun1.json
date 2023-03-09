@@ -1,0 +1,13 @@
+{
+	"name": "AzureFunction2_apptestfun1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureFunction",
+		"typeProperties": {
+			"functionAppUrl": "https://apptestfun1.azurewebsites.net",
+			"authentication": "Anonymous",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEU0QjJFM0YwLTkzMTMtNDAxMy05MjAyLTAxRkZDMjA3OEFENV9lY2VmOGNiZi0xZDYwLTRmY2EtOGZhYS0zNzFmY2RkNGVlZGQiDQp9"
+		}
+	}
+}
