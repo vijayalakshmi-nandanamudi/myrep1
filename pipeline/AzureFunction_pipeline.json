@@ -15,16 +15,16 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"functionName": " HttpTrigger1",
+					"functionName": " AzureFunctionTest",
 					"method": "POST",
 					"headers": {
 						"market_num": "2036",
-						"market_name": "Cincinnati, OH"
+						"market_name": "\"Cincinnati, OH\""
 					},
 					"body": "{\"name\":'Test\"}"
 				},
 				"linkedServiceName": {
-					"referenceName": "AzureFunction1",
+					"referenceName": "AzureFunction2_apptestfun1",
 					"type": "LinkedServiceReference"
 				}
 			}
