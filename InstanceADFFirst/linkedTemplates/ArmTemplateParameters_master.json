@@ -14,6 +14,9 @@
 		"AzureFunction1_functionKey": {
 			"value": ""
 		},
+		"AzureFunction2_apptestfun1_functionKey": {
+			"value": ""
+		},
 		"Ls_AzureBatch1_properties_typeProperties_batchUri": {
 			"value": "https://firstbatchinstance.southindia.batch.azure.com"
 		},
@@ -25,6 +28,9 @@
 		},
 		"AzureFunction1_properties_typeProperties_functionAppUrl": {
 			"value": "https://cstestpython.azurewebsites.net"
+		},
+		"AzureFunction2_apptestfun1_properties_typeProperties_functionAppUrl": {
+			"value": "https://apptestfun1.azurewebsites.net"
 		},
 		"containerUri": {
 			"value": ""

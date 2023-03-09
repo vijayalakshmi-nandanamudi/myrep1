@@ -19,6 +19,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'functionKey' of 'AzureFunction1'"
 		},
+		"AzureFunction2_apptestfun1_functionKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'functionKey' of 'AzureFunction2_apptestfun1'"
+		},
 		"Ls_AzureBatch1_properties_typeProperties_batchUri": {
 			"type": "string",
 			"defaultValue": "https://firstbatchinstance.southindia.batch.azure.com"
@@ -34,6 +38,10 @@
 		"AzureFunction1_properties_typeProperties_functionAppUrl": {
 			"type": "string",
 			"defaultValue": "https://cstestpython.azurewebsites.net"
+		},
+		"AzureFunction2_apptestfun1_properties_typeProperties_functionAppUrl": {
+			"type": "string",
+			"defaultValue": "https://apptestfun1.azurewebsites.net"
 		}
 	},
 	"variables": {
@@ -132,7 +140,7 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "Azure Function1",
+						"name": "Azure Function1_copy1",
 						"type": "AzureFunctionActivity",
 						"dependsOn": [],
 						"policy": {
@@ -144,13 +152,16 @@
 						},
 						"userProperties": [],
 						"typeProperties": {
-							"functionName": " HttpTrigger1",
+							"functionName": {
+								"value": "AzureFunctionTest?name=ss&market_num=2036&market_name=\"Cincinnati, OH\"",
+								"type": "Expression"
+							},
 							"method": "POST",
 							"headers": {},
-							"body": "{\"market_num\":\"2036\"\n,market_name\":\"Cincinnati, OH\"}"
+							"body": {}
 						},
 						"linkedServiceName": {
-							"referenceName": "AzureFunction1",
+							"referenceName": "AzureFunction2_apptestfun1",
 							"type": "LinkedServiceReference"
 						}
 					}
@@ -162,7 +173,7 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureFunction1')]"
+				"[concat(variables('factoryId'), '/linkedServices/AzureFunction2_apptestfun1')]"
 			]
 		},
 		{
@@ -177,6 +188,24 @@
 					"functionKey": {
 						"type": "SecureString",
 						"value": "[parameters('AzureFunction1_functionKey')]"
+					},
+					"authentication": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureFunction2_apptestfun1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureFunction",
+				"typeProperties": {
+					"functionAppUrl": "[parameters('AzureFunction2_apptestfun1_properties_typeProperties_functionAppUrl')]",
+					"functionKey": {
+						"type": "SecureString",
+						"value": "[parameters('AzureFunction2_apptestfun1_functionKey')]"
 					},
 					"authentication": "Anonymous"
 				}

@@ -19,6 +19,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'functionKey' of 'AzureFunction1'"
 		},
+		"AzureFunction2_apptestfun1_functionKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'functionKey' of 'AzureFunction2_apptestfun1'"
+		},
 		"Ls_AzureBatch1_properties_typeProperties_batchUri": {
 			"type": "string",
 			"defaultValue": "https://firstbatchinstance.southindia.batch.azure.com"
@@ -34,6 +38,10 @@
 		"AzureFunction1_properties_typeProperties_functionAppUrl": {
 			"type": "string",
 			"defaultValue": "https://cstestpython.azurewebsites.net"
+		},
+		"AzureFunction2_apptestfun1_properties_typeProperties_functionAppUrl": {
+			"type": "string",
+			"defaultValue": "https://apptestfun1.azurewebsites.net"
 		},
 		"containerUri": {
 			"type": "string",
@@ -68,11 +76,17 @@
 					"AzureFunction1_functionKey": {
 						"value": "[parameters('AzureFunction1_functionKey')]"
 					},
+					"AzureFunction2_apptestfun1_functionKey": {
+						"value": "[parameters('AzureFunction2_apptestfun1_functionKey')]"
+					},
 					"Ls_AzureBatch1_accessKey": {
 						"value": "[parameters('Ls_AzureBatch1_accessKey')]"
 					},
 					"AzureFunction1_properties_typeProperties_functionAppUrl": {
 						"value": "[parameters('AzureFunction1_properties_typeProperties_functionAppUrl')]"
+					},
+					"AzureFunction2_apptestfun1_properties_typeProperties_functionAppUrl": {
+						"value": "[parameters('AzureFunction2_apptestfun1_properties_typeProperties_functionAppUrl')]"
 					},
 					"Ls_AzureBatch1_properties_typeProperties_batchUri": {
 						"value": "[parameters('Ls_AzureBatch1_properties_typeProperties_batchUri')]"
