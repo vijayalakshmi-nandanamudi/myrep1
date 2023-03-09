@@ -16,11 +16,10 @@
 				"userProperties": [],
 				"typeProperties": {
 					"functionName": {
-						"value": " AzureFunctionTest?name=ss&market_num=2036&market_name=\"Cincinnati, OH\"",
+						"value": "AzureFunctionTest?name=ss&market_num=2036&market_name=\"Cincinnati, OH\"",
 						"type": "Expression"
 					},
-					"method": "POST",
-					"body": ""
+					"method": "POST"
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureFunction2_apptestfun1",
