@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Azure Function1",
+				"name": "Azure Function1_copy1",
 				"type": "AzureFunctionActivity",
 				"dependsOn": [],
 				"policy": {
