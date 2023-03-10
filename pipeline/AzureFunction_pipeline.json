@@ -45,8 +45,10 @@
 				]
 			},
 			"market_name": {
-				"type": "String",
-				"defaultValue": "[\"Bakersfield, CA\"]"
+				"type": "Array",
+				"defaultValue": [
+					"Bakersfield, CA"
+				]
 			}
 		},
 		"annotations": []
