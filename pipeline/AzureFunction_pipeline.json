@@ -8,6 +8,10 @@
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
+					"items": {
+						"value": "@variables('markets')",
+						"type": "Expression"
+					},
 					"activities": [
 						{
 							"name": "Azure Function1_copy1",
@@ -23,7 +27,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"functionName": {
-									"value": "AzureFunctionTest?name=ss&market_num=2036&market_name=\"Cincinnati, OH\"",
+									"value": "AzureFunctionTest?name=ss&market_num=@item().variables('market_num')&market_name=@item().variables('market_name')",
 									"type": "Expression"
 								},
 								"method": "POST"
@@ -37,6 +41,18 @@
 				}
 			}
 		],
+		"variables": {
+			"market_num": {
+				"type": "Array",
+				"defaultValue": [
+					2113
+				]
+			},
+			"market_name": {
+				"type": "String",
+				"defaultValue": "[\"Bakersfield, CA\"]"
+			}
+		},
 		"annotations": []
 	}
 }
