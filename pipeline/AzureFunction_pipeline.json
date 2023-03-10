@@ -8,10 +8,6 @@
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
-					"items": {
-						"value": "@variables('markets')",
-						"type": "Expression"
-					},
 					"activities": [
 						{
 							"name": "Azure Function1_copy1",
