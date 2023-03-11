@@ -3,37 +3,27 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "ForEach1",
-				"type": "ForEach",
+				"name": "Azure Function1_copy1",
+				"type": "AzureFunctionActivity",
 				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
 				"userProperties": [],
 				"typeProperties": {
-					"activities": [
-						{
-							"name": "Azure Function1_copy1",
-							"type": "AzureFunctionActivity",
-							"dependsOn": [],
-							"policy": {
-								"timeout": "0.12:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
-								"secureOutput": false,
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"functionName": {
-									"value": "AzureFunctionTest?name=ss&market_num=@item().variables('market_num')&market_name=@item().variables('market_name')",
-									"type": "Expression"
-								},
-								"method": "POST"
-							},
-							"linkedServiceName": {
-								"referenceName": "AzureFunction2_apptestfun1",
-								"type": "LinkedServiceReference"
-							}
-						}
-					]
+					"functionName": {
+						"value": "AzureFunctionTest?name=ss&market_num=2113&market_name=\"Bakersfield, CA\"",
+						"type": "Expression"
+					},
+					"method": "POST"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureFunction2_apptestfun1",
+					"type": "LinkedServiceReference"
 				}
 			}
 		],
