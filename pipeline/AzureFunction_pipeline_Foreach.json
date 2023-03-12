@@ -29,12 +29,13 @@
 					"dataset": {
 						"referenceName": "DelimitedText1",
 						"type": "DatasetReference"
-					}
+					},
+					"firstRowOnly": false
 				}
 			},
 			{
-				"name": "Set variable1",
-				"type": "SetVariable",
+				"name": "ForEach1",
+				"type": "ForEach",
 				"dependsOn": [
 					{
 						"activity": "Market_LKP",
@@ -45,11 +46,37 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
-					"variableName": "market_name",
-					"value": {
-						"value": "@activity('Market_LKP').output",
+					"items": {
+						"value": "@activity('Market_LKP').output.value",
 						"type": "Expression"
-					}
+					},
+					"isSequential": true,
+					"activities": [
+						{
+							"name": "Azure Function1",
+							"type": "AzureFunctionActivity",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"functionName": {
+									"value": "AzureFunctionTest?name=ss&market_num=@item().MARKET_NO&market_name=@item().MARKET_NAME",
+									"type": "Expression"
+								},
+								"method": "POST"
+							},
+							"linkedServiceName": {
+								"referenceName": "AzureFunction2_apptestfun1",
+								"type": "LinkedServiceReference"
+							}
+						}
+					]
 				}
 			}
 		],
