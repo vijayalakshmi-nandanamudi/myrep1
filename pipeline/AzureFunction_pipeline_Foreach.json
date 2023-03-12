@@ -9,7 +9,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@range(0,length(activity('Azure Function1_copy1').output.values))",
+						"value": "@createArray(pipeline().parameters.pmarket.values)",
 						"type": "Expression"
 					},
 					"isSequential": true,
