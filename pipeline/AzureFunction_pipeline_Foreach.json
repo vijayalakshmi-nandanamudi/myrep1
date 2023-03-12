@@ -9,7 +9,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@createArray(pipeline().parameters.pmarket.values)",
+						"value": "@createArray(pipeline().parameters.pmarket)",
 						"type": "Expression"
 					},
 					"isSequential": true,
@@ -44,7 +44,7 @@
 		],
 		"parameters": {
 			"pmarket": {
-				"type": "object",
+				"type": "array",
 				"defaultValue": "{   \"values\":[  \t\t{ \t\t\"market_num\": \"2113\", \t\t\"market_name\": \"\"Bakersfield, CA\"\" \t\t} \t\t] \t\t}"
 			}
 		},
