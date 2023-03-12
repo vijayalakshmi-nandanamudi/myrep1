@@ -1,97 +1,21 @@
 {
 	"name": "AzureFunction_pipeline_Foreach",
 	"properties": {
-		"activities": [
-			{
-				"name": "ForEach1",
-				"type": "ForEach",
-				"dependsOn": [],
-				"userProperties": [],
-				"typeProperties": {
-					"items": {
-						"value": "@activity('Azure Function1_copy1').output",
-						"type": "Expression"
-					},
-					"activities": [
-						{
-							"name": "Azure Function1_copy1",
-							"type": "AzureFunctionActivity",
-							"dependsOn": [
-								{
-									"activity": "Set variable2",
-									"dependencyConditions": [
-										"Completed"
-									]
-								},
-								{
-									"activity": "Set variable1",
-									"dependencyConditions": [
-										"Completed"
-									]
-								}
-							],
-							"policy": {
-								"timeout": "0.12:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
-								"secureOutput": false,
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"functionName": {
-									"value": "AzureFunctionTest?name=ss&market_num=@item().market_num&market_name=@item().market_name",
-									"type": "Expression"
-								},
-								"method": "POST"
-							},
-							"linkedServiceName": {
-								"referenceName": "AzureFunction2_apptestfun1",
-								"type": "LinkedServiceReference"
-							}
-						},
-						{
-							"name": "Set variable1",
-							"type": "SetVariable",
-							"dependsOn": [],
-							"userProperties": [],
-							"typeProperties": {
-								"variableName": "market_num",
-								"value": {
-									"value": "@item().market_num",
-									"type": "Expression"
-								}
-							}
-						},
-						{
-							"name": "Set variable2",
-							"type": "SetVariable",
-							"dependsOn": [],
-							"userProperties": [],
-							"typeProperties": {
-								"variableName": "market_name",
-								"value": {
-									"value": "@item().market_name",
-									"type": "Expression"
-								}
-							}
-						}
-					]
+		"parameters": {
+			"market": {
+				"type": "string",
+				"defaultValue": {
+					"market_num": 2113,
+					"market_name": "Bakersfield, CA"
 				}
 			}
-		],
+		},
 		"variables": {
 			"market_num": {
-				"type": "Array",
-				"defaultValue": [
-					"2113"
-				]
+				"type": "String"
 			},
 			"market_name": {
-				"type": "Array",
-				"defaultValue": [
-					"Bakersfield, CA"
-				]
+				"type": "String"
 			}
 		},
 		"annotations": []
