@@ -37,10 +37,10 @@
 		},
 		"variables": {
 			"market_num": {
-				"type": "String"
+				"type": "Array"
 			},
 			"market_name": {
-				"type": "String"
+				"type": "Array"
 			}
 		},
 		"annotations": []
