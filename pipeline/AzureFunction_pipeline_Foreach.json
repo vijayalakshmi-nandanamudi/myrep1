@@ -47,7 +47,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Market_LKP').output.firstRow",
+						"value": "@activity('Market_LKP').output.firstRow\r\n",
 						"type": "Expression"
 					},
 					"isSequential": true,
@@ -66,7 +66,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"functionName": {
-									"value": "AzureFunctionTest?name=ss&market_num=@item().MARKET_NO&market_name=@item().MARKET_NAME",
+									"value": "AzureFunctionTest?name=ss&market_num=@{item().MARKET_NO}&market_name=@{item().MARKET_NAME}",
 									"type": "Expression"
 								},
 								"method": "POST"
