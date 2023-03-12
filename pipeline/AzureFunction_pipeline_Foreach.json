@@ -9,7 +9,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "AzureFunctionTest?name=ss&market_num=@variables('market_num')&market_name=@variables('market_name')\n",
+						"value": "AzureFunctionTest?name=ss&market_num=variables('market_num')&market_name=variables('market_name')\n",
 						"type": "Expression"
 					},
 					"activities": [
@@ -27,7 +27,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"functionName": {
-									"value": "@AzureFunctionTest?name=ss&market_num=variables('market_num')&market_name=variables('market_name')",
+									"value": "@item()",
 									"type": "Expression"
 								},
 								"method": "POST"
