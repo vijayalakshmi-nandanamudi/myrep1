@@ -23,7 +23,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"functionName": {
-									"value": "AzureFunctionTest?name=ss&market_num=2113&market_name=\"Bakersfield, CA\"",
+									"value": "@AzureFunctionTest?name=ss&market_num=variables('market_num')&market_name=variables('market_name')",
 									"type": "Expression"
 								},
 								"method": "POST"
