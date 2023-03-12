@@ -30,7 +30,7 @@
 						"referenceName": "DelimitedText1",
 						"type": "DatasetReference"
 					},
-					"firstRowOnly": false
+					"firstRowOnly": true
 				}
 			},
 			{
@@ -47,7 +47,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Market_LKP').output.value",
+						"value": "@activity('Market_LKP').output.firstRow",
 						"type": "Expression"
 					},
 					"isSequential": true,
