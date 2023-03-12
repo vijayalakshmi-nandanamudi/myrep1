@@ -20,7 +20,7 @@
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
-							"enablePartitionDiscovery": false
+							"enablePartitionDiscovery": true
 						},
 						"formatSettings": {
 							"type": "DelimitedTextReadSettings"
@@ -30,7 +30,7 @@
 						"referenceName": "DelimitedText1",
 						"type": "DatasetReference"
 					},
-					"firstRowOnly": true
+					"firstRowOnly": false
 				}
 			},
 			{
@@ -47,33 +47,22 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Market_LKP').output.firstRow\r\n",
+						"value": "@activity('Market_LKP').output.value",
 						"type": "Expression"
 					},
 					"isSequential": true,
 					"activities": [
 						{
-							"name": "Azure Function1",
-							"type": "AzureFunctionActivity",
+							"name": "Set variable1",
+							"type": "SetVariable",
 							"dependsOn": [],
-							"policy": {
-								"timeout": "0.12:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
-								"secureOutput": false,
-								"secureInput": false
-							},
 							"userProperties": [],
 							"typeProperties": {
-								"functionName": {
-									"value": "AzureFunctionTest?name=ss&market_num=@{item().MARKET_NO}&market_name=@{item().MARKET_NAME}",
+								"variableName": "v_marketno",
+								"value": {
+									"value": "@item().MARKET_NAME",
 									"type": "Expression"
-								},
-								"method": "POST"
-							},
-							"linkedServiceName": {
-								"referenceName": "AzureFunction2_apptestfun1",
-								"type": "LinkedServiceReference"
+								}
 							}
 						}
 					]
@@ -81,7 +70,7 @@
 			}
 		],
 		"variables": {
-			"market_name": {
+			"v_marketno": {
 				"type": "String"
 			}
 		},
