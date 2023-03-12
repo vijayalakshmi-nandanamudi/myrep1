@@ -53,16 +53,27 @@
 					"isSequential": true,
 					"activities": [
 						{
-							"name": "Set variable1",
-							"type": "SetVariable",
+							"name": "Azure Function1",
+							"type": "AzureFunctionActivity",
 							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
 							"userProperties": [],
 							"typeProperties": {
-								"variableName": "v_marketno",
-								"value": {
-									"value": "@item().MARKET_NAME",
+								"functionName": {
+									"value": "AzureFunctionTest?name=ss&market_num=@item().MARKET_NO&market_name=@item().MARKET_NAME",
 									"type": "Expression"
-								}
+								},
+								"method": "POST"
+							},
+							"linkedServiceName": {
+								"referenceName": "AzureFunction2_apptestfun1",
+								"type": "LinkedServiceReference"
 							}
 						}
 					]
