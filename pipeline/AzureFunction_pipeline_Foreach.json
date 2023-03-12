@@ -10,7 +10,7 @@
 				"typeProperties": {
 					"variableName": "market_num",
 					"value": {
-						"value": "@pipeline().parameters.pmarket.values['market_num']",
+						"value": "@[pipeline().parameters.pmarket.values['market_num']]",
 						"type": "Expression"
 					}
 				}
