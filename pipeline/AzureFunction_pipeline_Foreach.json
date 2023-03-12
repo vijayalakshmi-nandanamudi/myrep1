@@ -105,7 +105,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"functionName": {
-									"value": "@item().MARKET_NAME",
+									"value": "@concat(concat(concat('AzureFunctionTest?name=ss&market_num=',item().MARKET_NO),'&market_name='),item().MARKET_NAME)",
 									"type": "Expression"
 								},
 								"method": "POST"
