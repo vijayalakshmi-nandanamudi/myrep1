@@ -9,7 +9,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Azure Function1_copy1').output.values",
+						"value": "@range(0,length(activity('Azure Function1_copy1').output.values))",
 						"type": "Expression"
 					},
 					"isSequential": true,
