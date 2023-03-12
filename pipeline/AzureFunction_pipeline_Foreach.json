@@ -14,19 +14,6 @@
 						"type": "Expression"
 					}
 				}
-			},
-			{
-				"name": "Set variable2",
-				"type": "SetVariable",
-				"dependsOn": [],
-				"userProperties": [],
-				"typeProperties": {
-					"variableName": "market_name",
-					"value": {
-						"value": "@pipeline().parameters.pmarket.values['market_name']",
-						"type": "Expression"
-					}
-				}
 			}
 		],
 		"parameters": {
