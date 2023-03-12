@@ -45,7 +45,7 @@
 			"market_num": {
 				"type": "Array",
 				"defaultValue": [
-					"['2113']"
+					"2113"
 				]
 			},
 			"market_name": {
