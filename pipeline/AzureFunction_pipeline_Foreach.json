@@ -9,14 +9,27 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "AzureFunctionTest?name=ss&market_num=variables('market_num')&market_name=variables('market_name')\n",
+						"value": "@activity('Azure Function1_copy1').output.rows",
 						"type": "Expression"
 					},
 					"activities": [
 						{
 							"name": "Azure Function1_copy1",
 							"type": "AzureFunctionActivity",
-							"dependsOn": [],
+							"dependsOn": [
+								{
+									"activity": "Set variable2",
+									"dependencyConditions": [
+										"Completed"
+									]
+								},
+								{
+									"activity": "Set variable1",
+									"dependencyConditions": [
+										"Completed"
+									]
+								}
+							],
 							"policy": {
 								"timeout": "0.12:00:00",
 								"retry": 0,
@@ -27,7 +40,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"functionName": {
-									"value": "@item()",
+									"value": "AzureFunctionTest?name=ss&market_num=@item().market_num&market_name=@item().market_name",
 									"type": "Expression"
 								},
 								"method": "POST"
@@ -35,6 +48,32 @@
 							"linkedServiceName": {
 								"referenceName": "AzureFunction2_apptestfun1",
 								"type": "LinkedServiceReference"
+							}
+						},
+						{
+							"name": "Set variable1",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "market_num",
+								"value": {
+									"value": "@item().market_num",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "Set variable2",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "market_name",
+								"value": {
+									"value": "@item().market_name",
+									"type": "Expression"
+								}
 							}
 						}
 					]
