@@ -28,7 +28,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"functionName": {
-									"value": "AzureFunctionTest?name=ss&market_num=@item().market_num&market_name=@item().market_name",
+									"value": "AzureFunctionTest?name=ss&market_num=item().market_num&market_name=item().market_name",
 									"type": "Expression"
 								},
 								"method": "POST"
