@@ -9,43 +9,36 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@createArray(pipeline().parameters.pmarket)",
+						"value": "@variables('market_num')",
 						"type": "Expression"
 					},
 					"isSequential": true,
 					"activities": [
 						{
-							"name": "Azure Function1_copy1",
-							"type": "AzureFunctionActivity",
+							"name": "Set variable1",
+							"type": "SetVariable",
 							"dependsOn": [],
-							"policy": {
-								"timeout": "0.12:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
-								"secureOutput": false,
-								"secureInput": false
-							},
 							"userProperties": [],
 							"typeProperties": {
-								"functionName": {
-									"value": "AzureFunctionTest?name=ss&market_num=item().market_num&market_name=item().market_name",
+								"variableName": "market_num",
+								"value": {
+									"value": "@item()",
 									"type": "Expression"
-								},
-								"method": "POST"
-							},
-							"linkedServiceName": {
-								"referenceName": "AzureFunction2_apptestfun1",
-								"type": "LinkedServiceReference"
+								}
 							}
 						}
 					]
 				}
 			}
 		],
-		"parameters": {
-			"pmarket": {
-				"type": "object",
-				"defaultValue": "{   \"values\":[  \t\t{ \t\t\"market_num\": \"2113\", \t\t\"market_name\": \"\"Bakersfield, CA\"\" \t\t} \t\t] \t\t}"
+		"variables": {
+			"market_num": {
+				"type": "Array",
+				"defaultValue": [
+					1,
+					2,
+					3
+				]
 			}
 		},
 		"annotations": []
