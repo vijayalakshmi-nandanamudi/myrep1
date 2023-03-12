@@ -1,13 +1,38 @@
 {
 	"name": "AzureFunction_pipeline_Foreach",
 	"properties": {
-		"parameters": {
-			"market": {
-				"type": "string",
-				"defaultValue": {
-					"market_num": 2113,
-					"market_name": "Bakersfield, CA"
+		"activities": [
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "market_num",
+					"value": {
+						"value": "@pipeline().parameters.pmarket.values['market_num']",
+						"type": "Expression"
+					}
 				}
+			},
+			{
+				"name": "Set variable2",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "market_name",
+					"value": {
+						"value": "@pipeline().parameters.pmarket.values['market_name']",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"pmarket": {
+				"type": "object",
+				"defaultValue": "{   \"values\": {     \"market_num\": \"2113\",     \"market_name\": \"\"Bakersfield, CA\"\"   } }"
 			}
 		},
 		"variables": {
