@@ -48,14 +48,6 @@
 				"defaultValue": "{   \"values\":[  \t\t{ \t\t\"market_num\": \"2113\", \t\t\"market_name\": \"\"Bakersfield, CA\"\" \t\t} \t\t] \t\t}"
 			}
 		},
-		"variables": {
-			"market_num": {
-				"type": "Array"
-			},
-			"market_name": {
-				"type": "Array"
-			}
-		},
 		"annotations": []
 	}
 }
