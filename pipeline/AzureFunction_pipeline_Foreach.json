@@ -8,6 +8,10 @@
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
+					"items": {
+						"value": "AzureFunctionTest?name=ss&market_num=@variables('market_num')&market_name=@variables('market_name')\n",
+						"type": "Expression"
+					},
 					"activities": [
 						{
 							"name": "Azure Function1_copy1",
@@ -41,7 +45,7 @@
 			"market_num": {
 				"type": "Array",
 				"defaultValue": [
-					2113
+					"['2113']"
 				]
 			},
 			"market_name": {
